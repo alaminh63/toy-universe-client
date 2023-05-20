@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NewCollection = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div>
       <div className="container my-24 px-6 mx-auto">
@@ -10,6 +16,7 @@ const NewCollection = () => {
           </h2>
           <div className="grid lg:grid-cols-3 gap-6">
             <div
+              data-aos="zoom-out-right"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               style={{ backgroundPosition: "50%" }}
               data-mdb-ripple="true"
@@ -17,14 +24,14 @@ const NewCollection = () => {
             >
               <img
                 src="https://mdbootstrap.com/img/new/standard/nature/051.jpg"
-                className="w-full"
+                className="w-full "
               />
               <a href="#!">
                 <div
                   className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
                   style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
                 >
-                  <div className="flex justify-start items-end h-full">
+                  <div className="flex justify-start items-end h-full ">
                     <div className="text-white m-6">
                       <h5 className="font-bold text-lg mb-3">I miss the sun</h5>
                       <p>
@@ -38,6 +45,7 @@ const NewCollection = () => {
               </a>
             </div>
             <div
+              data-aos="zoom-out"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -67,6 +75,7 @@ const NewCollection = () => {
               </a>
             </div>
             <div
+              data-aos="zoom-out-left"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -96,6 +105,7 @@ const NewCollection = () => {
               </a>
             </div>
             <div
+              data-aos="zoom-out-right"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -123,6 +133,7 @@ const NewCollection = () => {
               </a>
             </div>
             <div
+              data-aos="zoom-out"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
@@ -152,6 +163,7 @@ const NewCollection = () => {
               </a>
             </div>
             <div
+              data-aos="zoom-out-left"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
