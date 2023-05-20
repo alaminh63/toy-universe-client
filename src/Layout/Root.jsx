@@ -4,8 +4,10 @@ import NavigationBar from "../Pages/Shared/NavigationBar/NavigationBar";
 const Root = () => {
   return (
     <div>
-     <NavigationBar/>
-      <Outlet />
+      <NavigationBar />
+      <div className="max-w-[1240px] mx-auto">
+        <Outlet />
+      </div>
     </div>
   );
 };

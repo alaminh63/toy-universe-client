@@ -1,14 +1,43 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Login = () => {
-  const {} = useContext(Auth);
+  const { SignInWithGooglePopup, loginUser } = useContext(AuthContext);
+
+  const handleGoogle = () => {
+    SignInWithGooglePopup()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const userInfo = { email, password };
+    console.log(userInfo);
+    loginUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-sm p-6 bg-white rounded-md shadow-md">
         <h2 className="mb-4 text-2xl font-bold text-center">Login Here</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -39,16 +68,18 @@ const Login = () => {
               placeholder="Enter your password"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="text-center">
             <button
               type="submit"
               className="px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
             >
               Sign In
             </button>
+          </div>
+          <div className="text-center my-4">
             <button
-              type="submit"
-              className="px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+              onClick={handleGoogle}
+              className="btn-block px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
             >
               Google Login
             </button>
@@ -56,7 +87,7 @@ const Login = () => {
         </form>
         <div>
           <Link to="/registration">
-            <button className="transition duration-200 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-lg hover:bg-green-600 font-normal text-center">
+            <button className="transition duration-200 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-lg  font-normal text-center">
               Did not Have An Account?
             </button>
           </Link>

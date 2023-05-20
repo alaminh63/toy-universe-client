@@ -1,11 +1,57 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Registration = () => {
+  const { createUser, profileInfoUpdate, SignInWithGooglePopup } =
+    useContext(AuthContext);
+
+  const handleGoogle = () => {
+    SignInWithGooglePopup()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError("");
+        setUser(null);
+        setSuccess("Acount Create Success");
+      })
+      .catch((error) => {
+        console.error(error);
+        setSuccess("");
+        setError(error.message);
+      });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const displayName = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const userInfo = { displayName, photoURL, email, password };
+    console.log(userInfo);
+
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        profileInfoUpdate(displayName, photoURL)
+          .then(console.log("info updated"))
+          .catch((error) => {
+            console.error(error);
+          });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-sm p-6 bg-white rounded-md shadow-md">
         <h2 className="mb-4 text-2xl font-bold text-center">Please SignUp</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -29,7 +75,7 @@ const Registration = () => {
               PhotoURL Link
             </label>
             <input
-             name="photoURL"
+              name="photoURL"
               type="text"
               id="photoURL"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none"
@@ -73,12 +119,19 @@ const Registration = () => {
             >
               Sign Up
             </button>
-            
+          </div>
+          <div className="text-center my-4">
+            <button
+              onClick={handleGoogle}
+              className="btn-block px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+            >
+              Google Login
+            </button>
           </div>
         </form>
         <div>
           <Link to="/login">
-            <button className="transition duration-200 w-full py-3.5 rounded-lg text-sm shadow-sm hover:shadow-lg hover:bg-green-600 font-normal text-center">
+            <button className="transition duration-200 w-full py-3.5 rounded-lg text-sm shadow-sm hover:shadow-lg  font-normal text-center">
               Already Have An Account?
             </button>
           </Link>

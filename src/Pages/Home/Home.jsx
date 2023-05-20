@@ -1,11 +1,15 @@
-
+import Header from "./Header/Header";
+import NewCollection from "./NewCollection/NewCollection";
+import SocialConnect from "./SocialConnect/SocialConnect";
 
 const Home = () => {
-    return (
-        <div>
-            This is home page
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <SocialConnect />
+      <NewCollection />
+    </div>
+  );
 };
 
 export default Home;
