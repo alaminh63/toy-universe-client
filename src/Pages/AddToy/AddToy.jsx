@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const AddToy = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <h2>Add Your Toy</h2>
       <div className="card-body">
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-5">
           <div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-semibold">Product Name</span>
               </label>
-              <input 
+              <input
                 type="text"
                 placeholder="Type your product name"
                 className="input input-bordered rounded-none border-yellow-400"
@@ -44,6 +46,7 @@ const AddToy = () => {
               <input
                 type="text"
                 placeholder="Seller Email"
+                defaultValue={user.email}
                 className="input input-bordered rounded-none border-yellow-400"
               />
             </div>
@@ -51,44 +54,58 @@ const AddToy = () => {
           <div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Product Name</span>
+                <span className="label-text font-semibold">Sub Catergory</span>
               </label>
               <input
                 type="text"
-                placeholder="Type your product name"
-                className="input input-bordered"
+                placeholder="Sub Category"
+                className="input input-bordered rounded-none border-yellow-400"
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Product Image</span>
+                <span className="label-text font-semibold">Price</span>
               </label>
               <input
                 type="text"
-                placeholder="Link of your product image"
-                className="input input-bordered"
+                placeholder="Price $"
+                className="input input-bordered  rounded-none border-yellow-400"
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Seller Name</span>
+                <span className="label-text font-semibold">
+                  Available Quantity
+                </span>
               </label>
               <input
                 type="text"
-                placeholder="Seller Name"
-                className="input input-bordered"
+                placeholder="Available Quentity "
+                className="input input-bordered  rounded-none border-yellow-400"
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Seller Email</span>
+                <span className="label-text font-semibold">Rating</span>
               </label>
               <input
                 type="text"
-                placeholder="Seller Email"
-                className="input input-bordered"
+                placeholder="Rating"
+                className="input input-bordered rounded-none border-yellow-400"
               />
             </div>
+          </div>
+        </div>
+        <div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text font-semibold">Description</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Description"
+              className="input input-bordered rounded-none border-yellow-400 py-16"
+            />
           </div>
         </div>
         <div className="form-control mt-6">
