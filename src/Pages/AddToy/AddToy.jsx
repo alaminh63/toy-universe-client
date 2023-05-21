@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/AuthProvider";
-import ToyInfo from "../ToyInfo/ToyInfo";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -17,10 +17,9 @@ const AddToy = () => {
     const availableQuantity = form.availableQuantity.value;
     const rating = form.rating.value;
     const description = form.description.value;
-    const productInfo = {
+    const toy = {
       productName,
       productImage,
-      sellerName,
       sellerName,
       sellerEmail,
       subCategory,
@@ -29,7 +28,7 @@ const AddToy = () => {
       rating,
       description,
     };
-    console.log(productInfo);
+    console.log(toy);
     fetch("https://toy-universe-server-bay.vercel.app/add-toy", {
       method: "POST",
       headers: {
