@@ -15,7 +15,7 @@ const AllToy = () => {
   return (
     <div>
       <div className="overflow-x-auto">
-        <table className="table table-compact w-full">
+        <table className="table table-compact w-96 mx-auto mt-10 ">
           <thead>
             <tr>
               <th>Seller Name</th>
@@ -26,6 +26,7 @@ const AllToy = () => {
               <th>View Details</th>
             </tr>
           </thead>
+
           {toyInfo.map((toy) => (
             <TableData toy={toy} key={toy._id}></TableData>
           ))}

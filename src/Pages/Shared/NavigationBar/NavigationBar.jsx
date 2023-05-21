@@ -29,7 +29,7 @@ const NavigationBar = () => {
         <Link to="/myToys">My Toys</Link>
       </li>
       <li>
-        <Link>Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
     </>
   );
@@ -74,7 +74,7 @@ const NavigationBar = () => {
                     <Link to="/myToys">My Toys</Link>
                   </li>
                   <li>
-                    <Link>Blogs</Link>
+                    <Link to="/blogs">Blogs</Link>
                   </li>
                 </>
               ) : (
@@ -87,7 +87,7 @@ const NavigationBar = () => {
                   </li>
 
                   <li>
-                    <Link>Blogs</Link>
+                    <Link to="/blogs">Blogs</Link>
                   </li>
                 </>
               )}
@@ -122,7 +122,7 @@ const NavigationBar = () => {
                   <Link to="/myToys">My Toys</Link>
                 </li>
                 <li>
-                  <Link>Blogs</Link>
+                <Link to="/blogs">Blogs</Link>
                 </li>
               </>
             ) : (
@@ -135,7 +135,7 @@ const NavigationBar = () => {
                 </li>
 
                 <li>
-                  <Link>Blogs</Link>
+                <Link to="/blogs">Blogs</Link>
                 </li>
               </>
             )}

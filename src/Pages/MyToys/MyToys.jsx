@@ -79,7 +79,7 @@ const MyToys = () => {
               <th>Activity</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  className="font-semibold text-orange-600">
             {updateToy.map((toys) => (
               <MyTableData key={toys._id} toys={toys} deleteToy={deleteToy} />
             ))}

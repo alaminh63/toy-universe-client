@@ -6,14 +6,18 @@ import NewCollection from "./NewCollection/NewCollection";
 import SocialConnect from "./SocialConnect/SocialConnect";
 
 const Home = () => {
-  useTitle("Home")
+  useTitle("Home");
   return (
     <div>
       <Header />
-      <Gallery />
-      <TabCompo />
-      <NewCollection />
-      <SocialConnect />
+      <div className="max-w-[1240px] mx-auto">
+        <Gallery />
+        <TabCompo />
+        <div className="max-w-[1100px] mx-auto">
+          <NewCollection />
+        </div>
+        <SocialConnect />
+      </div>
     </div>
   );
 };

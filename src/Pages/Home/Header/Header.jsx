@@ -11,20 +11,19 @@ const Header = () => {
         }}
       >
         <div className="container bg-gradient-to-r from-[#000000] to-[rgba(21, 21, 21, 0)] h-full flex flex-col justify-center px-20">
-          <div className="flex items-center">
+          <div className="flex items-center ml-12">
             <div className="max-w-xl ">
-              <h1 className="text-5xl text-white font-bold mb-4">
-                Choose your favorite superhero Toys
+              <h1 className="text-5xl text-orange-500 font-bold mb-4">
+                Experience the <br /> Thrill of Action Toys
               </h1>
-              <p className="text-white mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                varius justo id arcu faucibus, vitae consectetur velit faucibus.
+              <p className="text-orange-200 mb-6">
+                Discover and Shop Amazing Action Toys <br /> Unleash the
+                Excitement with an Incredible Selection of Action Toys!
               </p>
-              <button className="bg-blue-500 text-white py-2 px-4 rounded">
+              <button className="bg-orange-500 text-white py-2 px-4 rounded">
                 Learn More
               </button>
             </div>
-          
           </div>
         </div>
       </div>
