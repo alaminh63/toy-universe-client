@@ -19,13 +19,13 @@ const NavigationBar = () => {
         <Link>Home</Link>
       </li>
       <li>
-        <Link>About</Link>
-      </li>
-      <li>
         <Link to="/alltoy">All Toy</Link>
       </li>
       <li>
         <Link to="/addToy">Add A Toy</Link>
+      </li>
+      <li>
+        <Link to="/myToys">My Toys</Link>
       </li>
       <li>
         <Link>Blogs</Link>
