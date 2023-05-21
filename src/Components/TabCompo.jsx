@@ -12,7 +12,7 @@ import { Rating } from "@smastrom/react-rating";
 const TabCompo = () => {
   const { user } = useContext(AuthContext);
   const [tabI, setTabI] = useState(2);
-  const [subCategory, setSubCategory] = useState("SuperHero Toys");
+  const [subCategory, setSubCategory] = useState("dc");
   const [tab, setTab] = useState([]);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const TabCompo = () => {
                   </div>
                   <button
                     onClick={handelTost}
-                    className="bg-[#B2A4FF] hover:bg-[#AA77FF] my-4 mb-6 px-6 py-2 rounded text-white"
+                    className="bg-orange-500 hover:bg-[#AA77FF] my-4 mb-6 px-6 py-2 rounded text-white"
                   >
                     <Link to={`/toyInfo/${tab._id}`}>View Details</Link>
                   </button>

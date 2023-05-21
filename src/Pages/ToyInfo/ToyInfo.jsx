@@ -1,17 +1,35 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ToyInfo = () => {
-    
+  const [toyData, setToyData] = useState({});
+  const { id } = useParams();
+  useEffect(() => {
+    fetch(`https://toy-universe-server-bay.vercel.app/toy/${id}`)
+      .then((res) => res.json())
+      .then((data) => setToyData(data));
+  }, []);
+
+  const {
+    productName,
+    productImage,
+    sellerName,
+    sellerEmail,
+    subCategory,
+    price,
+    availableQuantity,
+    rating,
+    description,
+  } = toyData;
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-            className="max-w-sm rounded-lg shadow-2xl"
-          />
+          <img src={productImage} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
+            <h1 className="text-2xl font-bold">Box {productName}</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
