@@ -19,9 +19,9 @@ const NewCollectionCard = ({ item }) => {
           >
             <div className="flex justify-start items-end h-full">
               <div className="text-white m-6">
-                <h5 className="font-bold text-lg mb-3">{sellerName}</h5>
+                <h5 className="font-bold text-lg mb-3 text-xl font-bold">{sellerName}</h5>
                 <p>
-                  <small>{description} </small>
+                  <small className="font-semibold">{description} </small>
                 </p>
               </div>
             </div>

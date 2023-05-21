@@ -25,16 +25,19 @@ const ToyInfo = () => {
   } = toyData;
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200 max-w-[1000px] mx-auto">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={productImage} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
             <h1 className="text-2xl font-bold">Box {productName}</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <p className="font-semibold  pl-5">Seller Name:{sellerName}</p>
+            <p className="font-semibold pl-5">Seller Email:{sellerEmail}</p>
+            <p className="font-semibold pl-5">Sub Category:{subCategory}</p>
+            <p className="font-semibold pl-5">
+              Available Quentity:{availableQuantity}
             </p>
+            <p className="font-semibold pl-5">Price:{price}$</p>
+            <p className="font-semibold pl-5">Description:{description}</p>
             <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
