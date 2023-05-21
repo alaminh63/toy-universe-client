@@ -1,9 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
 
 const Modify = () => {
   const { user } = useContext(AuthContext);
+  const { id } = useParams();
+  const [showInfo, setShowInfo] = useState({});
+  console.log(showInfo);
+
+  const {
+    productName,
+    productImage,
+    subCategory,
+    price,
+    availableQuantity,
+    rating,
+    description,
+  } = showInfo;
+
+  useEffect(() => {
+    fetch(`https://toy-universe-server-bay.vercel.app/toy/${id}`)
+      .then((res) => res.json())
+      .then((data) => setShowInfo(data));
+  }, [id]);
 
   const handleModify = (event) => {
     event.preventDefault();
@@ -29,8 +49,9 @@ const Modify = () => {
       description,
     };
     console.log(toy);
-    fetch("https://toy-universe-server-bay.vercel.app/add-toy", {
-      method: "POST",
+
+    fetch(`https://toy-universe-server-bay.vercel.app/update/${id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -38,10 +59,10 @@ const Modify = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "",
-            text: "Data Inserted Successfully!",
+            text: "Data Updated Successfully!",
             icon: "success",
             confirmButtonColor: "#B2A4FF",
             confirmButtonText: "ok",
@@ -65,6 +86,7 @@ const Modify = () => {
                   </label>
                   <input
                     type="text"
+                    defaultValue={productName}
                     name="productName"
                     placeholder="Type your product name"
                     className="input input-bordered rounded-none border-yellow-400"
@@ -78,6 +100,7 @@ const Modify = () => {
                   </label>
                   <input
                     type="text"
+                    defaultValue={productImage}
                     name="productImage"
                     placeholder="Link of your product image"
                     className="input input-bordered  rounded-none border-yellow-400"
@@ -107,7 +130,7 @@ const Modify = () => {
                     type="text"
                     name="sellerEmail"
                     placeholder="Seller Email"
-                    defaultValue={user.email}
+                    defaultValue={user?.email}
                     className="input input-bordered rounded-none border-yellow-400"
                   />
                 </div>
@@ -121,6 +144,7 @@ const Modify = () => {
                   </label>
                   <input
                     type="text"
+                    defaultValue={subCategory}
                     name="subCategory"
                     placeholder="Sub Category"
                     className="input input-bordered rounded-none border-yellow-400"
@@ -133,6 +157,7 @@ const Modify = () => {
                   <input
                     type="text"
                     name="price"
+                    defaultValue={price}
                     placeholder="Price $"
                     className="input input-bordered  rounded-none border-yellow-400"
                   />
@@ -146,6 +171,7 @@ const Modify = () => {
                   <input
                     type="text"
                     name="availableQuantity"
+                    defaultValue={availableQuantity}
                     placeholder="Available Quantity "
                     className="input input-bordered  rounded-none border-yellow-400"
                   />
@@ -157,6 +183,7 @@ const Modify = () => {
                   <input
                     type="text"
                     name="rating"
+                    defaultValue={rating}
                     placeholder="Rating"
                     className="input input-bordered rounded-none border-yellow-400"
                   />
@@ -170,6 +197,7 @@ const Modify = () => {
                 </label>
                 <input
                   type="text"
+                  defaultValue={description}
                   name="description"
                   placeholder="Description"
                   className="input input-bordered rounded-none border-yellow-400 py-16"

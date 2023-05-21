@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TableData = ({ toy }) => {
-  const { productName, sellerName, subCategory, price, availableQuantity } =
-    toy;
+  const {
+    _id,
+    productName,
+    sellerName,
+    subCategory,
+    price,
+    availableQuantity,
+  } = toy;
   return (
     <tbody>
       <tr>
@@ -12,7 +19,9 @@ const TableData = ({ toy }) => {
         <td>{price}</td>
         <td>{availableQuantity}</td>
         <td>
-          <button>View Details</button>
+          <Link to="/toyInfo/_id">
+            <button>View Details</button>
+          </Link>
         </td>
       </tr>
     </tbody>
