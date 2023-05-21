@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Registration = () => {
   const { createUser, profileInfoUpdate, SignInWithGooglePopup } =
     useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleGoogle = () => {
     SignInWithGooglePopup()
@@ -41,9 +43,14 @@ const Registration = () => {
           .catch((error) => {
             console.error(error);
           });
+        setError("");
+        setUser(null);
+        setSuccess("Acount Create Success");
       })
       .catch((error) => {
         console.error(error);
+        setSuccess("");
+        setError(error.message);
       });
   };
 
@@ -111,6 +118,10 @@ const Registration = () => {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none"
               placeholder="Enter your password"
             />
+          </div>
+          <div>
+            <p className="text-center ">{error}</p>
+            <p className="text-center ">{success}</p>
           </div>
           <div className="text-center">
             <button

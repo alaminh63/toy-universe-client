@@ -33,7 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/toyInfo/:id",
-        element: <ToyInfo />,
+        element: (
+          <PrivateRoute>
+            <ToyInfo />,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myToys",

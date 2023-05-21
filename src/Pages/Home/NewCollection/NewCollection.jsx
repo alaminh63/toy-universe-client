@@ -1,17 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useState } from "react";
-import NewCollectionCard from "../NewCollectionCard/NewCollectionCard";
 
 const NewCollection = () => {
-  const [collection, setCollection] = useState([]);
-  useEffect(() => {
-    fetch("fakedata.json")
-      .then((res) => res.json())
-      .then((data) => setCollection(data));
-  }, []);
-  console.log(collection);
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -24,10 +15,7 @@ const NewCollection = () => {
             Latest articles
           </h2>
           <div className="grid lg:grid-cols-3 gap-6">
-            {collection.map((item) => (
-              <NewCollectionCard item={item}></NewCollectionCard>
-            ))}
-            {/* <div
+            <div
               data-aos="zoom-out-right"
               className="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
               style={{ backgroundPosition: "50%" }}
@@ -203,7 +191,7 @@ const NewCollection = () => {
                   </div>
                 </div>
               </a>
-            </div> */}
+            </div>
           </div>
         </section>
       </div>

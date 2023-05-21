@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthProvider";
 
 const NavigationBar = () => {
@@ -32,6 +33,7 @@ const NavigationBar = () => {
       </li>
     </>
   );
+
   return (
     <div>
       <div className="navbar bg-base-100 max-w-[1140px] mx-auto">
@@ -57,7 +59,38 @@ const NavigationBar = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {navItems}
+              {user ? (
+                <>
+                  <li>
+                    <Link>Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/alltoy">All Toy</Link>
+                  </li>
+                  <li>
+                    <Link to="/addToy">Add A Toy</Link>
+                  </li>
+                  <li>
+                    <Link to="/myToys">My Toys</Link>
+                  </li>
+                  <li>
+                    <Link>Blogs</Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link>Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/alltoy">All Toy</Link>
+                  </li>
+
+                  <li>
+                    <Link>Blogs</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <Link className="btn btn-ghost normal-case text-xl">
@@ -73,7 +106,40 @@ const NavigationBar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal px-1">
+            {user ? (
+              <>
+                <li>
+                  <Link>Home</Link>
+                </li>
+                <li>
+                  <Link to="/alltoy">All Toy</Link>
+                </li>
+                <li>
+                  <Link to="/addToy">Add A Toy</Link>
+                </li>
+                <li>
+                  <Link to="/myToys">My Toys</Link>
+                </li>
+                <li>
+                  <Link>Blogs</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link>Home</Link>
+                </li>
+                <li>
+                  <Link to="/alltoy">All Toy</Link>
+                </li>
+
+                <li>
+                  <Link>Blogs</Link>
+                </li>
+              </>
+            )}
+          </ul>
         </div>
         <div className="navbar-end">
           <div className="">
