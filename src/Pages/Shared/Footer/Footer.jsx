@@ -3,8 +3,8 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="">
-      <footer className=" bg-gray-900 text-neutral-content">
-        <div className="footer p-10 ">
+      <footer className="bg-gray-900 text-neutral-content">
+        <div className=" max-w-[1200px] mx-auto footer p-10 ">
           <div>
             <span className="footer-title">Services</span>
             <a className="link link-hover">Branding</a>

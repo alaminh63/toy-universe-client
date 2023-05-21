@@ -22,7 +22,7 @@ const MyTableData = ({ toys, deleteToy }) => {
       <td>{availableQuantity}</td>
       <td className="flex gap-4 text-lg justify-center">
         <Link
-          to={`/edit/${_id}`}
+          to={`/modifyItems/${_id}`}
           className="border-2 rounded p-2 cursor-pointer"
         >
           <FiEdit />
