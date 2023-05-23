@@ -1,0 +1,41 @@
+.bg-card2 {
+    background: rgb(255, 69, 0); /* Old browsers */
+    background: -moz-linear-gradient(
+      -45deg,
+      rgba(255, 69, 0, 1) 0%,
+      rgba(255, 99, 71, 1) 17%,
+      rgba(255, 140, 0, 1) 50%,
+      rgba(255, 69, 0, 1) 51%,
+      rgba(255, 99, 71, 1) 59%,
+      rgba(255, 215, 0, 1) 71%,
+      rgba(255, 165, 0, 1) 84%,
+      rgba(255, 0, 0, 1) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      -45deg,
+      rgba(255, 69, 0, 1) 0%,
+      rgba(255, 99, 71, 1) 17%,
+      rgba(255, 140, 0, 1) 50%,
+      rgba(255, 69, 0, 1) 51%,
+      rgba(255, 99, 71, 1) 59%,
+      rgba(255, 215, 0, 1) 71%,
+      rgba(255, 165, 0, 1) 84%,
+      rgba(255, 0, 0, 1) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 69, 0, 1) 0%,
+      rgba(255, 99, 71, 1) 17%,
+      rgba(255, 140, 0, 1) 50%,
+      rgba(255, 69, 0, 1) 51%,
+      rgba(255, 99, 71, 1) 59%,
+      rgba(255, 215, 0, 1) 71%,
+      rgba(255, 165, 0, 1) 84%,
+      rgba(255, 0, 0, 1) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#ff4500',
+      endColorstr='#ff0000',
+      GradientType=1
+    ); /* IE6-9 fallback on horizontal gradient */
+  }

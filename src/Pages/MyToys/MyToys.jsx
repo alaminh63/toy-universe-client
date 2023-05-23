@@ -58,8 +58,8 @@ const MyToys = () => {
   }, [selectedOption]);
 
   return (
-    <div className="container my-12">
-      <section className="mr-auto my-10 min-w-[200px] md:w-1/3">
+    <div className="container my-12 max-w-[1140px] mx-auto">
+      <section className="mr-auto flex justify-end   my-10 min-w-[200px] md:w-1/2">
         <Select
           defaultValue={selectedOption}
           onChange={setSelectedOption}

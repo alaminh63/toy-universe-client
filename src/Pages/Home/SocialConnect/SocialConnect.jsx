@@ -4,9 +4,9 @@ const SocialConnect = () => {
   return (
     <div>
       <div className="container my-24 px-6 mx-auto">
-        <section className="mb-32 text-gray-800 text-center">
+        <section className="mb-32 bg-card2 rounded-3xl text-gray-800 text-center">
           <div className="p-12">
-            <h2 className="text-5xl font-bold tracking-tight leading-tight my-12">
+            <h2 className="md:text-5xl text-3xl font-bold tracking-tight leading-tight my-12">
               Let's stay in touch <br />
               <span className="text-blue-600">Join our social media</span>
             </h2>

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import useTitle from "../../Hooks/UseTitle";
 
 const ToyInfo = () => {
   const [toyData, setToyData] = useState({});
@@ -11,7 +12,7 @@ const ToyInfo = () => {
       .then((res) => res.json())
       .then((data) => setToyData(data));
   }, []);
-
+  useTitle("ToyInfo");
   const {
     productName,
     productImage,
@@ -37,8 +38,8 @@ const ToyInfo = () => {
               Available Quentity:{availableQuantity}
             </p>
             <p className="font-semibold pl-5">Price:{price}$</p>
+            <p className="font-semibold pl-5">Rating:{rating}$</p>
             <p className="font-semibold pl-5">Description:{description}</p>
-            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>

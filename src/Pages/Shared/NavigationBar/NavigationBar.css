@@ -1,0 +1,12 @@
+.active-link {
+  color: white;
+  background-color: rgba(255, 68, 0, 0.81);
+}
+.link {
+  text-decoration: none;
+}
+.bg-custom {
+  /* background: linear-gradient(to bottom right, #ccffff 0%, #383120 100%); */
+  background: rgb(198, 198, 204);
+}
+

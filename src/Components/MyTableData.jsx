@@ -14,7 +14,7 @@ const MyTableData = ({ toys, deleteToy }) => {
   } = toys;
 
   return (
-    <tr className="text-center">
+    <tr className="text-center border-2">
       <td>{sellerName}</td>
       <td>{productName}</td>
       <td>{subCategory}</td>

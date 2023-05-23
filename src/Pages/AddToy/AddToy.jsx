@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "../../Hooks/UseTitle";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
-
+  useTitle("AddToy");
   const handleAddItems = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -50,8 +51,8 @@ const AddToy = () => {
       });
   };
   return (
-    <div>
-      <h2>Add Your Toy</h2>
+    <div className="max-w-[1140px] mx-auto">
+      <h2 className="text-3xl font-bold text-orange-500 text-center mt-6 underline">Add Your Toy</h2>
       <form onSubmit={handleAddItems}>
         <div className="card-body">
           <div className="grid grid-cols-2 gap-5">

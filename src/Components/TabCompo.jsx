@@ -8,9 +8,10 @@ import { AuthContext } from "../Context/AuthProvider";
 import "react-tabs/style/react-tabs.css";
 import "@smastrom/react-rating/style.css";
 import { Rating } from "@smastrom/react-rating";
+import "./TabCompo.css";
 
 const TabCompo = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const [tabI, setTabI] = useState(2);
   const [subCategory, setSubCategory] = useState("dc");
   const [tab, setTab] = useState([]);
@@ -39,24 +40,28 @@ const TabCompo = () => {
       selectedIndex={tabI}
       onSelect={(index) => setTabI(index)}
     >
-      <TabList>
+      <TabList className="bg-card rounded-xl">
         <Tab onClick={() => handleCategory("marvel")}>Marvel</Tab>
         <Tab onClick={() => handleCategory("transformer")}>Transformer</Tab>
         <Tab onClick={() => handleCategory("dc")}>DC</Tab>
       </TabList>
       <TabPanel>
-        <div className="grid md:grid-cols-3 gap-10 mt-10 p-4">
+        <div className="grid md:grid-cols-3  gap-10 mt-10 p-4">
           {tab.map((tab) => (
             <>
-              <div key={tab._id} className="border rounded-md shadow ">
+              <div
+                key={tab._id}
+                className=" border-3 bg-card  text-white rounded-lg shadow-slate-700 shadow-lg"
+              >
                 <img
                   className=" mx-auto h-96 object-cover rounded-md border p-5"
-                  src={tab.photo_url}
+                  src={tab.productImage}
                   alt=""
                 />
                 <div className="">
                   <h1 className="text-xl mt-6">
-                    Name: <span className="font-semibold">{tab.name}</span>
+                    Name:{" "}
+                    <span className="font-semibold">{tab.productName}</span>
                   </h1>
                   <p className="my-2">Price: {tab.price}</p>
                   <div className="my-2 flex items-center justify-center gap-2">
@@ -83,7 +88,10 @@ const TabCompo = () => {
         <div className="grid md:grid-cols-3 gap-4 mt-10 p-4">
           {tab.map((tab) => (
             <>
-              <div key={tab._id} className="border rounded-md shadow">
+              <div
+                key={tab._id}
+                className="border-3 bg-card  text-white rounded-lg shadow-slate-700 shadow-lg"
+              >
                 <img
                   className="mx-auto h-96 object-cover rounded-md border p-5"
                   src={tab.productImage}
@@ -119,7 +127,10 @@ const TabCompo = () => {
         <div className="grid md:grid-cols-3 gap-4 mt-10">
           {tab.map((tab) => (
             <>
-              <div key={tab._id} className="border rounded-md shadow">
+              <div
+                key={tab._id}
+                className="border-3 bg-card  text-white rounded-lg shadow-slate-700 shadow-lg"
+              >
                 <img
                   className="mx-auto h-96 object-cover rounded-md border p-5"
                   src={tab.productImage}

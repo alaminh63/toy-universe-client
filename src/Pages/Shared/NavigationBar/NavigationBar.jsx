@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthProvider";
+import { NavLink } from "react-router-dom";
+import "./NavigationBar.css";
 
 const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -14,29 +16,9 @@ const NavigationBar = () => {
       });
   };
 
-  const navItems = (
-    <>
-      <li>
-        <Link>Home</Link>
-      </li>
-      <li>
-        <Link to="/alltoy">All Toy</Link>
-      </li>
-      <li>
-        <Link to="/addToy">Add A Toy</Link>
-      </li>
-      <li>
-        <Link to="/myToys">My Toys</Link>
-      </li>
-      <li>
-        <Link to="/blogs">Blogs</Link>
-      </li>
-    </>
-  );
-
   return (
-    <div>
-      <div className="navbar bg-base-100 max-w-[1140px] mx-auto">
+    <div className=" font-medium navbar  bg-slate-200   ">
+      <div className="max-w-[1140px] mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -93,15 +75,19 @@ const NavigationBar = () => {
               )}
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl">
-            <img
-              className="h-10"
-              src="https://w7.pngwing.com/pngs/715/843/png-transparent-toy-graphy-illustration-toys-daquan-child-baby-photography.png"
-              alt=""
-            />
-            <div className="font-extrabold text-2xl">
-              <span className="text-orange-500">Toy</span>
-              <span className="text-lime-500">Universe</span>
+          <Link className="btn btn-ghost normal-case text-xl ">
+            <div className="md:flex">
+              <div>
+                <img
+                  className="md:h-10 h-0"
+                  src="https://w7.pngwing.com/pngs/715/843/png-transparent-toy-graphy-illustration-toys-daquan-child-baby-photography.png"
+                  alt=""
+                />
+              </div>
+              <div className="font-extrabold md:text-2xl ">
+                <span className="text-orange-500">Toy</span>
+                <span className="text-lime-500">Universe</span>
+              </div>
             </div>
           </Link>
         </div>
@@ -110,19 +96,54 @@ const NavigationBar = () => {
             {user ? (
               <>
                 <li>
-                  <Link>Home</Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : "link"
+                    }
+                    to="/"
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/alltoy">All Toy</Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : "link"
+                    }
+                    to="/alltoy"
+                  >
+                    All Toy
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/addToy">Add A Toy</Link>
+                  <NavLink
+                    to="/addToy"
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : "link"
+                    }
+                  >
+                    Add A Toy
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/myToys">My Toys</Link>
+                  <NavLink
+                    to="/myToys"
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : "link"
+                    }
+                  >
+                    My Toys
+                  </NavLink>
                 </li>
                 <li>
-                <Link to="/blogs">Blogs</Link>
+                  <NavLink
+                    to="/blogs"
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : "link"
+                    }
+                  >
+                    Blogs
+                  </NavLink>
                 </li>
               </>
             ) : (
@@ -135,13 +156,13 @@ const NavigationBar = () => {
                 </li>
 
                 <li>
-                <Link to="/blogs">Blogs</Link>
+                  <Link to="/blogs">Blogs</Link>
                 </li>
               </>
             )}
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end ">
           <div className="">
             <div className="tooltip  tooltip-left" data-tip={user?.displayName}>
               {user?.photoURL ? (
@@ -152,11 +173,11 @@ const NavigationBar = () => {
             </div>
           </div>
           {user ? (
-            <Link onClick={handleLogout} className="btn mx-5">
+            <Link onClick={handleLogout} className="bg-orange-500 btn md:mx-5">
               Log Out
             </Link>
           ) : (
-            <Link className="btn mx-5" to="/login">
+            <Link className="btn md:mx-5 bg-orange-500" to="/login">
               Login
             </Link>
           )}

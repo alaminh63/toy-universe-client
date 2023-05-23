@@ -3,8 +3,8 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="">
-      <footer className="bg-gray-900 text-neutral-content">
-        <div className=" max-w-[1200px] mx-auto footer p-10 ">
+      <footer className="bg-gray-900 text-neutral-content ">
+        <div className=" max-w-[1140px] mx-auto footer p-10 ">
           <div>
             <span className="footer-title">Services</span>
             <a className="link link-hover">Branding</a>
@@ -36,10 +36,10 @@ const Footer = () => {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="username@site.com"
+                  placeholder="example@example.com"
                   className="input input-bordered w-full pr-16"
                 />
-                <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+                <button className="btn bg-orange-500 absolute top-0 right-0 rounded-l-none">
                   Subscribe
                 </button>
               </div>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center pb-5">
-          <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+          <p>Copyright © 2023 - All right reserved by ToyUniverse</p>
         </div>
       </footer>
     </div>

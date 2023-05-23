@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import TableData from "../../Components/TableData";
+import useTitle from "../../Hooks/UseTitle";
 
 const AllToy = () => {
   const [toyInfo, setToyInfo] = useState([]);
+  
   useEffect(() => {
     fetch("https://toy-universe-server-bay.vercel.app/toys")
       .then((res) => res.json())
@@ -11,6 +13,7 @@ const AllToy = () => {
         setToyInfo(data);
       });
   }, []);
+  useTitle("AllToy");
   const search = (e) => {
     e.preventDefault();
 
@@ -25,25 +28,25 @@ const AllToy = () => {
     <div>
       <form
         onSubmit={search}
-        className="overflow-hidden relative my-10 h-[50px] mx-w-[500px] min-w-[280px] max-w-7xl rounded-full mx-auto"
+        className="max-w-[700px]  overflow-hidden relative my-10 h-[50px] mx-w-[500px] min-w-[280px] max-w-7xl rounded-full mx-auto"
       >
         <input
           type="search"
           name="search"
           id=""
           placeholder="search"
-          className="placeholder:text-lg h-full rounded-full  w-full px-6"
+          className="placeholder:text-lg h-full border-4 border-orange-500 rounded-full  w-full px-6"
         />
         <input
           type="submit"
           value="search"
-          className="bg-[#B2A4FF] hover:bg-[#AA77FF] w-[90px] flex justify-between items-center text-center absolute right-0 top-0 h-full px-3 text-white"
+          className="bg-orange-500 hover:bg-[#AA77FF] w-[90px] flex justify-between items-center text-center absolute right-0 top-0 h-full px-3 text-white"
         />
       </form>
       <div className="overflow-x-auto">
-        <table className="table table-compact w-96 mx-auto mt-10 ">
+        <table className="table table-compact w-96 mx-auto mt-5 border-4 ">
           <thead>
-            <tr>
+            <tr className="">
               <th>Seller Name</th>
               <th>Toys Name</th>
               <th>Sub-Category</th>

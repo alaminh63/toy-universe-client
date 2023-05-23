@@ -20,8 +20,8 @@ const NewCollection = () => {
     <div>
       <div className="container my-24 px-6 mx-auto">
         <section className="mb-32 text-gray-800">
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            Latest articles
+          <h2 className="text-3xl text-orange-500 underline font-bold mb-12 text-center">
+            Most Sold Items
           </h2>
           <div className="grid lg:grid-cols-3 gap-6">
             {collection.map((item) => (

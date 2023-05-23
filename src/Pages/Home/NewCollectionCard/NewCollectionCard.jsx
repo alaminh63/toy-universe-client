@@ -15,13 +15,13 @@ const NewCollectionCard = ({ item }) => {
         <a href="#!">
           <div
             className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
           >
             <div className="flex justify-start items-end h-full">
-              <div className="text-white m-6">
-                <h5 className="font-bold text-lg mb-3 text-xl font-bold">{sellerName}</h5>
+              <div className=" m-6 ">
+                <h5 className="font-bold text-lg mb-3 text-orange-500 text-xl font-bold">{sellerName}</h5>
                 <p>
-                  <small className="font-semibold">{description} </small>
+                  <small className="font-semibold text-white">{description} </small>
                 </p>
               </div>
             </div>
