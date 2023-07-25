@@ -8,7 +8,7 @@ const ToyInfo = () => {
   const [toyData, setToyData] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://toy-universe-server-bay.vercel.app/toy/${id}`)
+    fetch(`https://toy-universe-server-two.vercel.app/toy/${id}`)
       .then((res) => res.json())
       .then((data) => setToyData(data));
   }, []);

@@ -18,7 +18,7 @@ const TabCompo = () => {
 
   useEffect(() => {
     fetch(
-      `https://toy-universe-server-bay.vercel.app/tabs?sub_category=${subCategory}`
+      `https://toy-universe-server-two.vercel.app/tabs?sub_category=${subCategory}`
     )
       .then((res) => res.json())
       .then((data) => setTab(data));

@@ -11,7 +11,7 @@ const MyToys = () => {
   const [deleteConfirm, setDeleteConfirm] = useState(0);
   const [selectedOption, setSelectedOption] = useState("descending");
 
-  const url = `https://toy-universe-server-bay.vercel.app/seller?email=${user?.email}`;
+  const url = `https://toy-universe-server-two.vercel.app/seller?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -24,7 +24,7 @@ const MyToys = () => {
   const deleteToy = (id) => {
     const isDelete = confirm("Are you sure you want to delete this?");
     if (isDelete) {
-      fetch(`https://toy-universe-server-bay.vercel.app/delete/${id}`, {
+      fetch(`https://toy-universe-server-two.vercel.app/delete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -51,7 +51,7 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `https://toy-universe-server-bay.vercel.app/sort?sortby=${selectedOption.value}&email=${user?.email}`
+      `https://toy-universe-server-two.vercel.app/sort?sortby=${selectedOption.value}&email=${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => setUpdateToy(data));
@@ -79,7 +79,7 @@ const MyToys = () => {
               <th>Activity</th>
             </tr>
           </thead>
-          <tbody  className="font-semibold text-orange-600">
+          <tbody className="font-semibold text-orange-600">
             {updateToy.map((toys) => (
               <MyTableData key={toys._id} toys={toys} deleteToy={deleteToy} />
             ))}

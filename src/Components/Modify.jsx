@@ -20,7 +20,7 @@ const Modify = () => {
   } = showInfo;
 
   useEffect(() => {
-    fetch(`https://toy-universe-server-bay.vercel.app/toy/${id}`)
+    fetch(`https://toy-universe-server-two.vercel.app/toy/${id}`)
       .then((res) => res.json())
       .then((data) => setShowInfo(data));
   }, [id]);
@@ -50,7 +50,7 @@ const Modify = () => {
     };
     console.log(toy);
 
-    fetch(`https://toy-universe-server-bay.vercel.app/update/${id}`, {
+    fetch(`https://toy-universe-server-two.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

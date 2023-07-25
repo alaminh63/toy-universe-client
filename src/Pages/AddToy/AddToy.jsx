@@ -30,7 +30,7 @@ const AddToy = () => {
       description,
     };
     console.log(toy);
-    fetch("https://toy-universe-server-bay.vercel.app/add-toy", {
+    fetch("https://toy-universe-server-two.vercel.app/add-toy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,9 @@ const AddToy = () => {
   };
   return (
     <div className="max-w-[1140px] mx-auto">
-      <h2 className="text-3xl font-bold text-orange-500 text-center mt-6 underline">Add Your Toy</h2>
+      <h2 className="text-3xl font-bold text-orange-500 text-center mt-6 underline">
+        Add Your Toy
+      </h2>
       <form onSubmit={handleAddItems}>
         <div className="card-body">
           <div className="grid grid-cols-2 gap-5">

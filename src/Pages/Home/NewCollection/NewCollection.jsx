@@ -7,7 +7,7 @@ import NewCollectionCard from "../NewCollectionCard/NewCollectionCard";
 const NewCollection = () => {
   const [collection, setCollection] = useState([]);
   useEffect(() => {
-    fetch("https://toy-universe-server-bay.vercel.app/toys2")
+    fetch("https://toy-universe-server-two.vercel.app/toys2")
       .then((res) => res.json())
       .then((data) => setCollection(data));
   }, []);

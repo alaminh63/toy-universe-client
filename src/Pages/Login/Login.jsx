@@ -12,7 +12,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
   if (loading) {
     return (
-      <button className="btn loading bg-orange-500 w-full h-full flex items-center justify-center z-50">
+      <button className="btn loading bg-orange-500 w-full= h-full flex items-center justify-center z-50">
         loading
       </button>
     );

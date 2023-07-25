@@ -5,9 +5,9 @@ import useTitle from "../../Hooks/UseTitle";
 
 const AllToy = () => {
   const [toyInfo, setToyInfo] = useState([]);
-  
+
   useEffect(() => {
-    fetch("https://toy-universe-server-bay.vercel.app/toys")
+    fetch("https://toy-universe-server-two.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => {
         setToyInfo(data);
@@ -18,7 +18,7 @@ const AllToy = () => {
     e.preventDefault();
 
     fetch(
-      `https://toy-universe-server-bay.vercel.app/search?query=${e.target.search.value}`
+      `https://toy-universe-server-two.vercel.app/search?query=${e.target.search.value}`
     )
       .then((res) => res.json())
       .then((data) => setToyInfo(data));
